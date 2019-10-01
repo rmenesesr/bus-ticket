@@ -18,26 +18,48 @@
   <title>Alerts</title>
 </head>
 <body>
-  
+  <div id="list">
     <table id="alerts-table">
         <thead> 
-          <tr class="table">
+          <tr id="table">
             <th>Nombre</th>
             <th>Origen</th>
             <th>Destino</th>
             <th>Clase</th>
             <th>Precio</th>
-            <th colspan="3">Acciones</th>
+            <th colspan="3">Options</th>
           </tr>
         </thead>
         <tbody id="alert">
           
         </tbody>
-      </table>
-      <div class="mt-8">
-        <button type="submit" id="boton">Back</button>
-      </div>
-      <script src="alert.js"></script>
+      </table><br>
+      <button type="submit" id="botom">Back</button>
+  </div><br><br>   
+
+  <div id="edit">
+    <form id="edit-alert">
+      <input type="hidden" name="id" type="text" id="id"><br>
+      <label for="name">Name :</label>
+      <input name="name" type="text" id="name"><br>
+      <label for="origen">Origen :</label>
+      <select id="city-origen"></select><br>
+      <label for="destino">Destino :</label>
+      <select id="city-destino"></select><br>
+      <label for="clase">Clase :</label>
+      <input type="text" id="clase"><br>
+      <label for="precio">Precio :</label>
+      <input type="text" id="precio"><br>
+      <input type="submit" id="boton" value="Guardar">
+    </form>
+    <script src="alert.js"></script>
+  </div>
+  <div id="view">
+    <span type="text" id="name"></span>
+    <span type="text" id="origen"></span>
+    <span type="text" id="destino"></span>
+    <span type="text" id="precio"></span>
+    <span type="text" id="clase"></span>
   </div>
 </body>
 </html>

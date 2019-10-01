@@ -10,14 +10,14 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
     console.log(response);
     const token = response.data.token;
     document.cookie = `token=${token}`;
-    console.log('COOKIE', token);
-    window.location.href = "/alert.html"
+    //console.log('COOKIE', token);
+    window.location.href = "alert.html"
   }).catch(function(error) {
     console.log(error);
     let err = error.response.statusText;
-    if (err == "Unauthorized") {
+    if (err === "Unauthorized") {
       alert ("Password Invalid")
-      //document.getElementById("error").innerHTML = err;
+      
     }
   });
   })
