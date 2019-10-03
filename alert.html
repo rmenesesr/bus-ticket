@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <style class="">
-        table, th, td {
-        border: 1px solid black;
-        }  
-         table {
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 70%;
-        }
-        </style>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        </head>
+  <style class="">
+  table, th, td {
+  border: 1px solid black;
+  }  
+    table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  .form{
+    width: 400px;
+    /* height: 200px; */
+    float: inherit;
+    margin: 30px;
+  }
+  .box{
+    border: 1px dashed black;
+    width:max-content;
+    float: none;
+  }
+  </style>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        
   <title>Alerts</title>
 </head>
 <body>
@@ -31,13 +46,13 @@
           </tr>
         </thead>
         <tbody id="alert">
-          
+          <span id="loading">Loading...</span>
         </tbody>
       </table><br>
       <button type="submit" id="botom">Back</button>
   </div><br><br>   
 
-  <div id="edit">
+  <div id="edit" class="form" style="display: none">
     <form id="edit-alert">
       <input type="hidden" name="id" type="text" id="id"><br>
       <label for="name">Name :</label>
@@ -52,14 +67,17 @@
       <input type="text" id="precio"><br>
       <input type="submit" id="boton" value="Guardar">
     </form>
-    <script src="alert.js"></script>
+    
   </div>
-  <div id="view">
-    <span type="text" id="name"></span>
-    <span type="text" id="origen"></span>
-    <span type="text" id="destino"></span>
-    <span type="text" id="precio"></span>
-    <span type="text" id="clase"></span>
+  <div id="view" class="box" style="display: none">
+    <h3 id="seeName" style="font-style:italic; font-family: Verdana; background-color: skyblue;"></h3>
+    <span id="seeOrigen"></span><br>
+    <span id="seeDestino"></span><br>
+    <span id="seeClase"></span><br>
+    <span id="seePrecio"></span>
   </div>
+  <span id="container" style="height: 400px; min-width: 310px; align-items: left;"></span>
+  
+  <script src="alert.js"></script>
 </body>
 </html>
